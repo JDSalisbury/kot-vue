@@ -6,8 +6,8 @@
       <label for="kitty">Cyber Kitty</label>
     </div>
     <div>
-      <input type="checkbox" id="pengui" name="pengui" />
-      <label for="pengui">Space Penguin</label>
+      <input type="checkbox" id="penguin" name="penguin" />
+      <label for="penguin">Space Penguin</label>
     </div>
     <div>
       <input type="checkbox" id="zaur" name="zaur" />
@@ -20,6 +20,10 @@
     <div>
       <input type="checkbox" id="king" name="king" />
       <label for="king">The King</label>
+    </div>
+    <div>
+      <input type="checkbox" id="alienoid" name="alienoid" />
+      <label for="alienoid">Alienoid</label>
     </div>
     <button>Battle</button>
   </div>
