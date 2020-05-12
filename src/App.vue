@@ -4,6 +4,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
+    <img alt="Vue logo" src="../src/assets/kot-dice.png" />
     <router-view />
   </div>
 </template>
@@ -16,4 +17,7 @@
   text-align center
   color #2c3e50
   margin-top 60px
+
+img
+  width 20%
 </style>
