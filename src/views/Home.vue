@@ -1,23 +1,40 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/kot-dice.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>Choose your monsters</h1>
+    <div>
+      <input type="checkbox" id="kitty" name="kitty" />
+      <label for="kitty">Cyber Kitty</label>
+    </div>
+    <div>
+      <input type="checkbox" id="pengui" name="pengui" />
+      <label for="pengui">Space Penguin</label>
+    </div>
+    <div>
+      <input type="checkbox" id="zaur" name="zaur" />
+      <label for="zaur">Giga Zaur</label>
+    </div>
+    <div>
+      <input type="checkbox" id="dragon" name="dragon" />
+      <label for="dragon">Meka Dragon</label>
+    </div>
+    <div>
+      <input type="checkbox" id="king" name="king" />
+      <label for="king">The King</label>
+    </div>
+    <button>Battle</button>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "Home",
-  components: {
-    HelloWorld,
-  },
+  components: {},
 };
 </script>
 
 <style lang="stylus">
-img
-  width 20%
+ul
+  list-style-type none
 </style>
