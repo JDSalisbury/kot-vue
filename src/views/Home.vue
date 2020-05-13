@@ -75,6 +75,7 @@ export default {
   created() {},
   methods: {
     updateSelectedMonster(e) {
+      // https://stackoverflow.com/questions/42686388/how-to-bind-checkboxes-to-vuex-store
       this.$store.dispatch("updateSelectedMonster", e.target);
     },
   },
