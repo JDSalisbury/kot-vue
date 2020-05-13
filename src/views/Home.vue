@@ -26,15 +26,19 @@
       <label for="alienoid">Alienoid</label>
     </div>
     <button>Battle</button>
+    <p>{{ selectedMonsters.monsters }}</p>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
+import { mapGetters } from "vuex";
 export default {
   name: "Home",
   components: {},
+  created() {},
+  methods: {},
+  computed: mapGetters(["selectedMonsters"]),
 };
 </script>
 
