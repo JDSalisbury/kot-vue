@@ -67,13 +67,15 @@
 
 <script>
 // @ is an alias to /src
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Home",
   components: {},
   created() {},
   methods: {
+    ...mapActions(["updateSelectedMonster"]),
+
     updateSelectedMonster(e) {
       // https://stackoverflow.com/questions/42686388/how-to-bind-checkboxes-to-vuex-store
       this.$store.dispatch("updateSelectedMonster", e.target);

@@ -14,16 +14,24 @@ const mutations = {
 };
 
 const actions = {
-  updateSelectedMonster(context, monster) {
+  updateSelectedMonster({ commit }, monster) {
+    console.log("From Action", monster);
     if (monster.checked) {
       // monster checked, so we want to add this monster to our list of 'selectedmonsters'
-      context.commit("addSelectedMonster", {
+      commit("addSelectedMonster", {
         id: monster.id,
         name: monster.value,
+        order: 0,
+        cards: [],
+        pts: 0,
+        atk: 0,
+        hp: 0,
+        gil: 0,
+        record: [],
       });
     } else {
       // otherwise, remove the monster from our list
-      context.commit("removeSelectedMonster", monster.id);
+      commit("removeSelectedMonster", monster.id);
     }
   },
 };
