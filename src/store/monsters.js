@@ -1,5 +1,7 @@
 const state = {
   monsters: [],
+  submitted: false,
+  subError: "",
 };
 
 const mutations = {
@@ -11,11 +13,16 @@ const mutations = {
       return monster.id != id;
     });
   },
+  submitMonsterList(state) {
+    state.submitted = true;
+  },
+  submitError(state) {
+    state.subError = "Need More Monsters to Battle!";
+  },
 };
 
 const actions = {
   updateSelectedMonster({ commit }, monster) {
-    console.log("From Action", monster);
     if (monster.checked) {
       // monster checked, so we want to add this monster to our list of 'selectedmonsters'
       commit("addSelectedMonster", {
@@ -27,16 +34,25 @@ const actions = {
         atk: 0,
         hp: 0,
         gil: 0,
-        record: [],
+        logs: [],
       });
     } else {
       // otherwise, remove the monster from our list
       commit("removeSelectedMonster", monster.id);
     }
   },
+  submitMonsters({ commit }) {
+    if (state.monsters.length >= 2) {
+      commit("submitMonsterList");
+    } else {
+      commit("submitError");
+    }
+  },
 };
 
-const getters = { selectedMonsters: (state) => state };
+const getters = {
+  monsterState: (state) => state,
+};
 
 export default {
   state,
