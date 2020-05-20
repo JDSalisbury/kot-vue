@@ -2,10 +2,19 @@ const state = {
   monsters: [],
   submitted: false,
   subError: "",
+  playableMonsters: [
+    { id: 6, name: `Cyber Kitty` },
+    { id: 5, name: `Space Penguin` },
+    { id: 4, name: `Giga Zaur` },
+    { id: 3, name: `Meka Dragon` },
+    { id: 2, name: `The King` },
+    { id: 1, name: `Alienoid` },
+  ],
 };
 
 const mutations = {
   addSelectedMonster(state, monster) {
+    state.subError = "";
     state.monsters.push(monster);
   },
   removeSelectedMonster(state, id) {

@@ -1,7 +1,11 @@
 <template>
   <div class="home">
-    <MonsterList />
-    <p>{{ monsterState.monsters }}</p>
+    <MonsterList v-if="!monsterState.submitted" />
+    <ul>
+      <li v-for="mon in monsterState.monsters" :key="mon.name">
+        {{ mon.name }}
+      </li>
+    </ul>
   </div>
 </template>
 
