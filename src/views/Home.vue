@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <MonsterList v-if="!monsterState.submitted" />
+    <OrderMonsters v-if="monsterState.submitted" />
     <ul>
       <li v-for="mon in monsterState.monsters" :key="mon.name">
         {{ mon.name }}
@@ -17,6 +18,7 @@ export default {
   name: "Home",
   components: {
     MonsterList: () => import("@/components/home/checkboxList.vue"),
+    OrderMonsters: () => import("@/components/home/orderList.vue"),
   },
   created() {},
   methods: {},

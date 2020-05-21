@@ -10,6 +10,7 @@ const state = {
     { id: 2, name: `The King` },
     { id: 1, name: `Alienoid` },
   ],
+  turnOrder: 1
 };
 
 const mutations = {
@@ -28,6 +29,18 @@ const mutations = {
   submitError(state) {
     state.subError = "Need More Monsters to Battle!";
   },
+  updateMonster(state, monster) {
+    console.log("Action magic", monster);
+    // const result = state.submitMonsterList.find(({ monster.name }) => name === 'cherries');
+    state.monsters = state.monsters.filter((mon) => {
+      if (mon.id === monster.id && mon.order === 0) {
+        mon.order = state.turnOrder;
+        state.turnOrder++;
+      }
+      return true;
+    });
+    console.log(state.monsters);
+  }
 };
 
 const actions = {
@@ -57,6 +70,9 @@ const actions = {
       commit("submitError");
     }
   },
+  updateMonsterOrder({ commit }, monster) {
+    commit("updateMonster", monster)
+  }
 };
 
 const getters = {
